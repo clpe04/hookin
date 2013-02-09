@@ -20,7 +20,7 @@ This section provides some short examples of HookIn and its usage.
 
     (register-transformation :add-10 test-function)
 
-    (apply-changes :add-10 15)
+    (apply-transformations :add-10 15)
 
 Defines a function named "test-function", which are then registered in the plugin
 management system under the hook :add-10 and then applied to the number 15 for a result of 25.
@@ -40,7 +40,7 @@ management system under the hook :add-10 and then applied to the number 15 for a
 
     (load-hooks-file "/path-to-file/plugin.clj")
 
-    (apply-changes :add-10 15)
+    (apply-transformations :add-10 15)
 
 Defines a hooked function named "test-function" associated with the hook ":add-10" in a 
 seperate clj file. The file is then loaded into the project and the function registers itself 
