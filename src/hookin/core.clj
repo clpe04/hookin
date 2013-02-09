@@ -19,7 +19,7 @@
   "Defines a function with the given name, arguments and body and
   adds a HookIn meta data entry to be used by HookIn autoload"
   `(defn
-     ~(with-meta name {*hook-keyword* hook})
+     ~(with-meta name {*hook-keyword* hook-name})
      ~args ~body))
 
 (defn- register-hooked-transformation
@@ -55,18 +55,18 @@
 (defn load-hooks-file
   "Loads the specific clj file, and adds all hook functions in the
   files namespace to the hook manager"
-  [file]
-  (load-file file)
+  [filepath]
+  (load-file filepath)
   (autoregister-transformations
    (list-hook-functions
-    (first (#'bultitude.core/namespaces-in-dir file)))))
+    (first (#'bultitude.core/namespaces-in-dir filepath)))))
 
 (defn load-hooks-jar
   "Adds the specific jar file to the classpath and requires the namespaces
   in the jar file and adds the hook functions to the hook manager"
-  [jar-file]
-  (hookin.classloader/add-classpath jar-file)
-  (doseq [namespace (#'bultitude.core/namespaces-in-jar jar-file)]
+  [filepath]
+  (hookin.classloader/add-classpath filepath)
+  (doseq [namespace (#'bultitude.core/namespaces-in-jar filepath)]
     (require namespace)
     (autoregister-transformations
      (list-hook-functions namespace))))
