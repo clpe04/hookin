@@ -15,7 +15,7 @@
   associated with the specified hooks"}
   hooked-transformations (atom {}))
 
-(defmacro hookfn [name hook args body]
+(defmacro hookfn [name hook-name args body]
   "Defines a function with the given name, arguments and body and
   adds a HookIn meta data entry to be used by HookIn autoload"
   `(defn
