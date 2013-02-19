@@ -9,7 +9,8 @@ then be applied to data.
 
 ## Usage
 
-This section provides some short examples of HookIn and its usage.
+This section provides some short basic examples of how to use HookIn.
+For more examples and advanced features check out the prjects GitHub wiki pages.
 
 #### Example 1 - Simple usage
 
@@ -22,10 +23,10 @@ This section provides some short examples of HookIn and its usage.
 
     (apply-transformations :add-10 15)
 
-Defines a function named "test-function", which are then registered in the plugin
-management system under the hook :add-10 and then applied to the number 15 for a result of 25.
+Defines a function named "test-function", which are then registered in the hook
+management system under the hook :add-10. It is then applied to the number 15 for a result of 25.
 
-#### Example 2 - Autoloading functions
+#### Example 2 - Autoloading hooked functions
 
 ##### Code placed in a file called plugin.clj
 
@@ -42,10 +43,7 @@ management system under the hook :add-10 and then applied to the number 15 for a
 
     (apply-transformations :add-10 15)
 
-Defines a hooked function named "test-function" associated with the hook ":add-10" in a 
-seperate clj file. The file is then loaded into the project and the function registers itself 
-in the hook management system under the hook :add-10 and is then applied to the number 15 
-for a result of 25.
+Defines a hooked function named "test-function" associated with the hook ":add-10" in a seperate clj file. The file is then loaded into the project and the function is registered in the hook management system under the hook :add-10. It is then applied to the number 15 for a result of 25.
 
 ## Acknowledgements
 
