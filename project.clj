@@ -1,4 +1,4 @@
-(defproject hookin "0.1.0"
+(defproject hookin "0.1.1"
   :description "Hook management system with dynamic load and registration of functions"
   :url "http://github.com/clpe04/hookin"
   :license {:name "Eclipse Public License"
