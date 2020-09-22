@@ -1,0 +1,5 @@
+== Hookin
+
+Pronounced 'Hú-kin\
+
+Is a clojure hook management system, enabling the user to manually register or dynamically load and register clj and jar files and extract functions marked as hooked transformations and add them to a list of transformations, which can then be applied to data.
