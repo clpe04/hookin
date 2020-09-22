@@ -1,0 +1,3 @@
+== Hookin
+
+This will contain the Hookin documentation in the future
